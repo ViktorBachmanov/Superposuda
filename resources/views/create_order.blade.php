@@ -18,6 +18,28 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            form {
+	            display: flex;
+	            flex-direction: column;
+	            align-items: center;
+	            justify-content: space-evenly;
+	            height: 20rem;
+	            width: 15rem;
+	            box-shadow: 0px 0px 3px 2px gray;
+            }
+
+            label {
+	            text-align: center;
+            }
+
+            input[type='text'] {
+                width: 15rem;
+            }
+
+            button {
+                cursor: pointer;
+            }
         </style>
     </head>
 
@@ -26,7 +48,23 @@
         <form method="POST" action="/create_order">
             @csrf
 
-            <input value='Бачманов Виктор Владимирович'>
+            <label>ФИО
+                <input type='text' name='fio' value='Бачманов Виктор Владимирович'>
+            </label>
+
+            <label>Комментарий
+                <textarea name='comment'>Отличный товар</textarea>
+            </label>
+
+            <label>Артикул
+                <input type='text' name='article'>
+            </label>
+
+            <label>Бренд
+                <input type='text' name='brand'>
+            </label>
+
+            <button type='submit' name='submit'>Отправить</button>
         </form>
     </div>
     </body>
