@@ -23,7 +23,9 @@
 
     <body>
     <div>
-        <pre>{{ $responseBody }}</pre>
+        <pre>{{ print_r($responseBody) }}</pre>
+        <br>
+        productId: {{ $id }}
     </div>
     </body>
 </html>
