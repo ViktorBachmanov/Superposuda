@@ -57,11 +57,11 @@
             </label>
 
             <label>Артикул
-                <input type='text' name='article'>
+                <input type='text' name='article' value='72062251921101'>
             </label>
 
             <label>Бренд
-                <input type='text' name='brand'>
+                <input type='text' name='brand' value='TVS'>
             </label>
 
             <button type='submit' name='submit'>Отправить</button>

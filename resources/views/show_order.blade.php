@@ -23,7 +23,7 @@
 
     <body>
     <div>
-        <h2>{{ $fio }}</h2>
+        <pre>{{ $responseBody }}</pre>
     </div>
     </body>
 </html>
