@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CreateOrder;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +22,5 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('create_order');
 });
+
+Route::post('/create_order', [CreateOrder::class, 'index']);
