@@ -13,14 +13,14 @@ class CreateOrder extends Controller
 {
     public function index(Request $request)
     {
-        $response = $this->getProducts($request->article, $request->brand);
+        /*$response = $this->getProducts($request->article, $request->brand);
         $resArr = $response->json();
-        $productId = $resArr['products'][0]['offers'][0]['id'];
+        $productId = $resArr['products'][0]['offers'][0]['id'];*/
         // $productId = 1;
 
-        //return view('show_order', ['fio' => $request->fio]);
-        return view('show_order', ['responseBody' => $resArr,
-        							'id' => $productId]);
+        /*return view('show_order', ['responseBody' => $resArr,
+        							'id' => $productId]);*/
+        return view('create_order', ['request' => $request]);
     }
 
 

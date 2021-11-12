@@ -41,31 +41,39 @@
                 cursor: pointer;
             }
         </style>
+
+        <script>
+            
+        </script>
     </head>
 
     <body>
     <div>
-        <form method="POST" action="/create_order">
+        <form method="POST" action="/">
             @csrf
 
             <label>ФИО
-                <input type='text' name='fio' value='Бачманов Виктор Владимирович'>
+                <input type='text' name='fio' value='{{ $request->fio ?? "Бачманов Виктор Владимирович" }}'>
             </label>
 
             <label>Комментарий
-                <textarea name='comment'>Отличный товар</textarea>
+                <textarea name='comment'>{{ $request->comment ?? "Отличный товар" }}</textarea>
             </label>
 
             <label>Артикул
-                <input type='text' name='article' value='72062251921101'>
+                <input type='text' name='article' value='{{ $request->article ?? "72062251921101" }}'>
             </label>
 
             <label>Бренд
-                <input type='text' name='brand' value='TVS'>
+                <input type='text' name='brand' value='{{ $request->brand ?? "TVS" }}'>
             </label>
 
             <button type='submit' name='submit'>Отправить</button>
         </form>
+
+        @if(isset($order))
+            
+        @endif
     </div>
     </body>
 </html>

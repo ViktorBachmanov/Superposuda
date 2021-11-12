@@ -23,4 +23,4 @@ Route::get('/', function () {
     return view('create_order');
 });
 
-Route::post('/create_order', [CreateOrder::class, 'index']);
+Route::post('/', [CreateOrder::class, 'index']);
