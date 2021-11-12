@@ -70,9 +70,13 @@
 
             <button type='submit' name='submit'>Отправить</button>
         </form>
+        
+        @if(isset($productId))
+            Product Id:{{ $productId }}<br>
+        @endif
 
         @if(isset($order))
-            
+            <pre>{{ print_r($order) }}</pre>
         @endif
     </div>
     </body>

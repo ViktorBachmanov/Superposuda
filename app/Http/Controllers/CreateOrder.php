@@ -13,14 +13,17 @@ class CreateOrder extends Controller
 {
     public function index(Request $request)
     {
-        /*$response = $this->getProducts($request->article, $request->brand);
+        $response = $this->getProducts($request->article, $request->brand);
         $resArr = $response->json();
-        $productId = $resArr['products'][0]['offers'][0]['id'];*/
-        // $productId = 1;
+        $productId = $resArr['products'][0]['offers'][0]['id'];
+        
+        $order = $this->createOrder($productId);
 
         /*return view('show_order', ['responseBody' => $resArr,
         							'id' => $productId]);*/
-        return view('create_order', ['request' => $request]);
+        return view('create_order', ['request' => $request,
+        								'productId' => $productId,
+        								'order' => $order->json()]);
     }
 
 
@@ -35,5 +38,16 @@ class CreateOrder extends Controller
     
     private function createOrder($productId)
     {
+    	$response = Http::asForm()->post('https://superposuda.retailcrm.ru/api/v5/orders/create', [
+    		'apiKey' => 'QlnRWTTWw9lv3kjxy1A8byjUmBQedYqb',
+    		'order[items][0][status]' => 'trouble',
+    		'order[orderType]' => 'fizik',
+    		'order[site]' => 'test',
+    		'order[orderMethod]' => 'test',
+    		'order[number]' => '05071976',
+    		'order[items][0][offer][id]' => $productId
+		]);
+		
+		return $response;
     }
 }
