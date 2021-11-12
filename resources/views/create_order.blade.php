@@ -53,7 +53,7 @@
             @csrf
 
             <label>ФИО
-                <input type='text' name='fio' value='{{ $request->fio ?? "Бачманов Виктор Владимирович" }}'>
+                <input type='text' name='fio' value='{{ $request->fio ?? "Пупкин Василий Петрович" }}'>
             </label>
 
             <label>Комментарий
