@@ -27,9 +27,13 @@ class CreateOrder extends Controller
     private function getProducts($article, $brand)
     {
         $url = "https://superposuda.retailcrm.ru/api/v5/store/products?filter[name]=${article}&filter[manufacturer]=${brand}&apiKey=QlnRWTTWw9lv3kjxy1A8byjUmBQedYqb";
-        //$url = "https://cnc-op.ru";
         $response = Http::get($url);
 
         return $response;
+    }
+    
+    
+    private function createOrder($productId)
+    {
     }
 }
